@@ -1,4 +1,4 @@
-class Ground {
+class Groun {
   constructor(x, y, width, height) {
     var options ={
       isStatic : true
