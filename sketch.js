@@ -5,30 +5,33 @@ const Bodies = Matter.Bodies;
 var engine,world;
 
 function setup() {
-    // Setup the canvas, the ground the, tanker, the shooting ball and the bubble balls.
+  
    var canvas = createCanvas(900,600);
    engine = Engine.create();
    world = engine.world;   
    
-   ground = new Groun(450,595,900,10);
-
-   tank1 = new Tank(60,580,100,20);
-   tank2 = new Tank(60,200,100,20);
+   ground = new Ground(450,595,900,10);
+   
+   paper = new Paper(200,200,50,50);
+   bin1 = new Bin(800,450,10,100);
+   bin2 = new Bin(880,450,10,100); 
 }
 
 function draw() {
-    background("black");
+    background("white");
     Engine.update(engine);
 
     ground.display();
-
-    tank1.display();
-    tank2.display();
-
-
+    bin1.display();
+    bin2.display();   
+    paper.display();
+    
 }
 
 
 function keyReleased() {
-    // Call the shoot method for the cannon.
+    if(keyCode===32){
+        paper.body.position.x=-2;
+        paper.body.position.y=4;
+    }
 }
