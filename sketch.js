@@ -11,10 +11,10 @@ function setup() {
    world = engine.world;   
    
    ground = new Ground(450,595,900,10);
+   bin1= new Bin();
    
    paper = new Paper(200,200,50,50);
-   bin1 = new Bin(800,450,10,100);
-   bin2 = new Bin(880,450,10,100); 
+    
 }
 
 function draw() {
@@ -22,16 +22,15 @@ function draw() {
     Engine.update(engine);
 
     ground.display();
-    bin1.display();
-    bin2.display();   
+    bin1.display();  
     paper.display();
     
 }
 
 
-function keyReleased() {
-    if(keyCode===32){
-        paper.body.position.x=-2;
-        paper.body.position.y=4;
-    }
+function keyPressed(){
+	if(keyCode == UP_ARROW){
+		Matter.Body.applyForce(paper.body,paper.body.position,{x:85,y:-85})
+	}
 }
+
