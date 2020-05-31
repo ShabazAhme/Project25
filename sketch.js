@@ -13,7 +13,7 @@ function setup() {
    ground = new Ground(450,595,900,10);
    bin1= new Bin();
    
-   paper = new Paper(300,200,50,50);
+   paper = new Paper(400,200,50,50);
     
 }
 
